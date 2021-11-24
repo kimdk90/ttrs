@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테트리스</title>
+    <style>
+        
+        /*
+	방향별로 정의하기
+        □□□□   :  "0:0", "1:0", "2:0", "3:0"        "0:0", "0:1", "0:2", "0:3"
+
+        □        
+        □□     :  "0:0", "1:0", "-1:0"          "0:1", "0:0", "1:0"          "0:0", "1:0", "1:1"          "0:1", "1:1", "1:0"
+
+         □        "0:1", "1:1", "1:0"           "0:0", "0:1", "1:1"          "0:1", "0:0", "1:0"          "0:0", "1:0", "1:1"
+        □□     :  
+
+        □         
+        □□□    :   "0:1", "1:1", "2:1", "0:0"            "0:2", "0:1", "0:0", "1:0"            "0:0", "1:0", "2:0", "2:1"            "0:2", "1:2", "1:1", "1:0"
+
+          □        
+        □□□    :   "0:1", "1:1", "2:1", "2:0"            "1:-1", "1:0", "1:1", "2:1"            "-1:1", "-1:0", "0:0", "1:0"            "0:-1", "1:-1", "1:0", "1:1"
+
+        □□         
+        □□     :   "0:1", "1:1", "0:0", "1:0"
+
+        */
+    </style>
+    <link rel="stylesheet" href="/css/block.css">
+    <link rel="stylesheet" href="/css/div.css">
+    <!-- 제이쿼리 CDN은 https://code.jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src = "/js/makeBlock.js"></script>
+</head>
+<body>
+    
+    <div id="mainDiv">
+
+        <div id="blockDiv">
+            <!-- 가로 x 세로 : 12 x 22 -->
+            <table cellspacing=0 cellpadding=0 style="width:300px" align=center>
+                <script>
+                    makeBlock(12, 22);                    
+                </script>                                                                                   
+            </table>
+        </div>
+
+        <div id="rightDiv">
+            
+            <div id="level">
+                <div>Level</div>
+                <div id="levelValue">1</div>
+            </div>            
+
+            <div id="score">
+                <div>Score</div>
+                <div id="scoreValue">0</div>
+            </div>            
+
+            <div id="next">
+                Next
+            </div>            
+            <div id="divNextImg">
+            
+            </div>            
+
+            <div id="direction">
+                <div id="dir_mo">(위 화살표: 모양 변경)</div>                 
+                <div>
+                    ↑ <br>
+                    ←↓→
+                </div>
+                <div id="dir_space">스페이스바 (내리기)</div>
+            </div>
+        </div>
+    </div>
+    <script src = "/js/main.js"></script>
+</body>
+</html>
